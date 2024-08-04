@@ -46,10 +46,12 @@ android {
     }
 
     defaultConfig {
-        minSdk = 21
+        minSdk = 23
     }
 
     dependencies {
+        implementation 'com.google.code.gson:gson:2.8.9'
+        implementation "androidx.car.app:app:1.4.0"
         testImplementation("org.jetbrains.kotlin:kotlin-test")
         testImplementation("org.mockito:mockito-core:5.0.0")
     }
