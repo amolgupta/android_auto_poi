@@ -1,6 +1,6 @@
 name: android_auto_poi
 description: " Flutter plugin for android auto POI apps"
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/amolgupta/android_auto_poi
 
 environment:

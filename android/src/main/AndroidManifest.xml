@@ -24,7 +24,6 @@
         <service
             android:name=".Service"
             android:exported="true"
-            android:label="Android auto plugin"
             android:foregroundServiceType="location">
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />

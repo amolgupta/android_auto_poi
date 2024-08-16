@@ -43,5 +43,6 @@ class POIItem {
 
   String toJson() => json.encode(toMap());
 
-  factory POIItem.fromJson(String source) => POIItem.fromMap(json.decode(source));
+  factory POIItem.fromJson(String source) =>
+      POIItem.fromMap(json.decode(source));
 }
