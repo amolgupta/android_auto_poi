@@ -1,6 +1,6 @@
 name: android_auto_poi
-description: " Flutter plugin for android auto POI apps"
-version: 0.0.4
+description: "Flutter plugin for Android Auto POI apps. Syncs a list of locations to show on car dashboard"
+version: 0.0.5
 homepage: https://github.com/amolgupta/android_auto_poi
 
 environment:

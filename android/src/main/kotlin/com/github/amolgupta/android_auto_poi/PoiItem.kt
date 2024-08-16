@@ -9,8 +9,8 @@ data class PoiItem(
     @SerializedName("id") val id: String,
     @SerializedName("title") val title: String,
     @SerializedName("subtitle") val subtitle: String,
-    @SerializedName("lat") val lat: Double,
-    @SerializedName("lon") val lon: Double,
+    @SerializedName("latitude") val latitude: Double,
+    @SerializedName("longitude") val longitude: Double,
     @SerializedName("stopNumber") val stopNumber: Int
 ){
     companion object {

@@ -20,7 +20,7 @@ import androidx.car.app.model.PlaceListMapTemplate
 import androidx.car.app.model.PlaceMarker
 import androidx.car.app.model.Row
 import androidx.car.app.model.Template
-import androidx.car.app.validation.HostValidator
+
 
 internal class Screen(carContext: CarContext) : Screen(carContext) {
 
@@ -68,17 +68,18 @@ internal class Screen(carContext: CarContext) : Screen(carContext) {
             .addText(SpannableString(it.subtitle))
             .setBrowsable(true)
             .setNumericDecoration(it.stopNumber)
+
             .setOnClickListener {
                 AndroidAutoPoiPlugin.events?.success(it.id)
-                startNavigation(it.lat, it.lon)
+                startNavigation(it.latitude, it.longitude)
             }
             .setMetadata(
                 Metadata.Builder()
                     .setPlace(
                         androidx.car.app.model.Place.Builder(
                             CarLocation.create(
-                                it.lat,
-                                it.lon
+                                it.latitude,
+                                it.longitude
                             )
                         )
                             .setMarker(PlaceMarker.Builder().build())
@@ -91,7 +92,7 @@ internal class Screen(carContext: CarContext) : Screen(carContext) {
 
     private fun startNavigation(latitude: Double, longitude: Double) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse("google.navigation:q=$latitude,$longitude")
+            data = Uri.parse("geo:$latitude,$longitude?q=$latitude,$longitude");
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) // Add this flag
             setPackage("com.google.android.apps.maps") // Ensure it opens with Google Maps
         }
