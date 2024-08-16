@@ -47,7 +47,7 @@ internal class Screen(carContext: CarContext) : Screen(carContext) {
 
         val itemListBuilder = ItemList.Builder()
             .setNoItemsMessage("No places to show")
-        ItemRepository.getItems().forEach {
+        ItemRepository.getItems().forEach { it ->
             itemListBuilder.addItem(itemRow(it))
         }
 
