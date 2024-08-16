@@ -1,20 +1,20 @@
 package com.github.amolgupta.android_auto_poi
 
-import android.util.Log
-
 class ItemRepository {
 
     companion object {
-        private val items = mutableListOf<Item>()
+        private val items = mutableListOf<PoiItem>()
 
-        fun addItem(item: Item) {
-            Log.d("ItemRepository", "Adding item: $item)")
+        fun addItem(item: PoiItem) {
             items.add(item)
         }
 
-        fun getItems(): List<Item> {
-            Log.d("ItemRepository", "Reading items)")
+        fun getItems(): List<PoiItem> {
             return items
+        }
+
+        fun clear() {
+            items.clear()
         }
     }
 }

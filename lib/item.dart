@@ -1,16 +1,18 @@
 import 'dart:convert';
 
-class Item {
-  final String name;
+class POIItem {
+  final String title;
+  final String subtitle;
   final double latitude;
   final double longitude;
   final int stopNumber;
-  final int id;
+  final String id;
 
-  Item({
+  POIItem({
     required this.id,
     required this.stopNumber,
-    required this.name,
+    required this.title,
+    required this.subtitle,
     required this.latitude,
     required this.longitude,
   });
@@ -19,17 +21,19 @@ class Item {
     return {
       'id': id,
       'stopNumber': stopNumber,
-      'name': name,
+      "title": title,
+      "subtitle": subtitle,
       'latitude': latitude,
       'longitude': longitude,
     };
   }
 
-  factory Item.fromMap(Map<String, dynamic> map) {
-    return Item(
+  factory POIItem.fromMap(Map<String, dynamic> map) {
+    return POIItem(
       id: map['id'],
       stopNumber: map['stopNumber'],
-      name: map['name'],
+      title: map['title'],
+      subtitle: map['subtitle'],
       latitude: map['latitude'],
       longitude: map['longitude'],
     );
@@ -37,5 +41,5 @@ class Item {
 
   String toJson() => json.encode(toMap());
 
-  factory Item.fromJson(String source) => Item.fromMap(json.decode(source));
+  factory POIItem.fromJson(String source) => POIItem.fromMap(json.decode(source));
 }

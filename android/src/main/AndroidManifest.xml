@@ -2,18 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.github.amolgupta.android_auto_poi">
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="androidx.car.app.MAP_TEMPLATES"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
-    <uses-permission android:name="androidx.car.app.MAP_TEMPLATES"/>
+
+
+    <queries>
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
 
     <application>
         <meta-data

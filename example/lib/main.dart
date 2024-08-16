@@ -2,7 +2,6 @@ import 'package:android_auto_poi/item.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:android_auto_poi/android_auto_poi.dart';
 
 void main() {
@@ -17,8 +16,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _androidAutoPoiPlugin = AndroidAutoPoi();
-
   @override
   void initState() {
     super.initState();
@@ -26,20 +23,37 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> initPlatformState() async {
-    _androidAutoPoiPlugin.syncLocations(items: [
-      Item(
-          name: 'Home',
-          id: 1,
+    AndroidAutoPoi.syncLocations(items: [
+      POIItem(
+          title: 'Monmouth Coffee',
+          subtitle: '27 Monmouth St, London WC2H 9EU',
+          id: "abc",
           stopNumber: 1,
-          latitude: 37.4219999,
-          longitude: -122.0840575),
-      Item(
-          name: 'Work',
-          id: 2,
+          latitude: 51.5136,
+          longitude: -0.0923),
+      POIItem(
+          title: 'Flat White',
+          subtitle: '17 Berwick St, London W1F 0PT',
+          id: "def",
           stopNumber: 2,
-          latitude: 37.4219999,
-          longitude: -122.0840575),
+          latitude: 51.5154,
+          longitude: -0.1360),
+      POIItem(
+          title: 'Kaffeine',
+          subtitle: '66 Great Titchfield St, London W1W 7QJ',
+          id: "123",
+          stopNumber: 3,
+          latitude: 51.5188,
+          longitude: -0.1420),
+      POIItem(
+          title: 'The Espresso Room',
+          subtitle: '31-35 Great Ormond St, London WC1N 3HZ',
+          id: "456",
+          stopNumber: 4,
+          latitude: 51.5226,
+          longitude: -0.1245),
     ]);
+    AndroidAutoPoi.setListener((id) => {print('Location id: $id')});
   }
 
   @override
