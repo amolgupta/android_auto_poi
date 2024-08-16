@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+/// Represents a point of interest (POI) item.
+
 class POIItem {
   final String title;
   final String subtitle;
